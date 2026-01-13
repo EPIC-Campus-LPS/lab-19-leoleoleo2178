@@ -23,19 +23,19 @@ public class Node<E> {
     }
 
 
-    public void setNextNode(E next) {
+    public void setNextNode(Node<E> next) {
         this.next = next;
     }
 
-    public void setPrevNode(E previous) {
+    public void setPrevNode(Node<E> previous) {
         this.previous = previous;
     }
 
-    public Node<E> getPrevNode(){
+    public E getPrevNode(){
         return previous;
     }
 
-    public Node<E> getNextNode(){
+    public E getNextNode(){
         return next;
     }
 
