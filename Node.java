@@ -1,7 +1,7 @@
 public class Node<E> {
-    private E value;
-    private E next;
-    private E previous;
+    E value;
+    Node<E> next;
+    Node<E> previous;
 
 
     public Node(E val) {
@@ -11,32 +11,29 @@ public class Node<E> {
     }
 
     public Node(E val, Node maybe) {
-        if(maybe.toString().equals("Next")){
-            next = val;
-        } else if (maybe.toString().equals("Prev")) {
-            previous = val;
-        }
-    }
-
-    public E getValue() {
-        return value;
+        value = val;
+        setPrevNode(maybe);
     }
 
 
     public void setNextNode(Node<E> next) {
-        this.next = next;
+        this.next =  next;
     }
 
     public void setPrevNode(Node<E> previous) {
         this.previous = previous;
     }
 
-    public E getPrevNode(){
+    public Node<E> getPrevNode(){
         return previous;
     }
 
-    public E getNextNode(){
+    public Node<E> getNextNode(){
         return next;
+    }
+
+    public E getValue() {
+        return value;
     }
 
     @Override
@@ -45,7 +42,7 @@ public class Node<E> {
     }
 
     @Override
-    public boolean equals(Node<E> obj) {
+    public boolean equals(Object obj) {
         return value.equals(obj);
     }
 }
